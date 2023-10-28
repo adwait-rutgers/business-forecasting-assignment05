@@ -63,7 +63,9 @@ attributes(df_ts_stl)
 plot(df_ts_stl)
 
 ```
+
 ## Plotting Trend and Seasonal Components
+
 ```{r}
 plot(df_ts_stl$time.series[, "trend"], main="Trend Component")
 plot(df_ts_stl$time.series[, "seasonal"], main="Seasonal Component")
