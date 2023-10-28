@@ -62,6 +62,17 @@ df_ts_stl <- stl(df_ts,s.window ="periodic")
 attributes(df_ts_stl)
 plot(df_ts_stl)
 
+```
+## Plotting Trend and Seasonal Components
+```{r}
+plot(df_ts_stl$time.series[, "trend"], main="Trend Component")
+plot(df_ts_stl$time.series[, "seasonal"], main="Seasonal Component")
+
+```
+
+## Seasonally Adjusting Time Series
+
+```{r}
 # Seasonal Adjustment
 df_ts_stl_seasadj = seasadj(df_ts_stl)
 plot(df_ts_stl_seasadj)
@@ -73,6 +84,8 @@ plot(df_ts_stl_seasadj)
 plot(df_ts)
 lines(df_ts_stl_seasadj, col="blue")
 ```
+
+### As the data is not seasonal, there is no difference between seasonally adjusted time series and original time series and the two lines overlap 
 
 ## Forecasting the Decomposed Time Series
 
